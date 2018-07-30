@@ -1,7 +1,7 @@
 title: Css3 文字省略号...
 date: 2017-01-01 01:01:01 
 update: 2017-01-01 01:01:01 
-author: 作者ID
+author: me
 tags: 
     - css3
     - css
