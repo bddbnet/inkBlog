@@ -34,6 +34,10 @@ In Connector.php line 67:
 > 出错原因：mysql8中已经将默认的密码认证方式改为了`caching_sha2_password`
 
 解决办法：修改mysql8 的密码认证方式，由`caching_sha2_password`变更为`mysql_native_password`
+```
+create user 'user'@'%' identified by 'password';
+ALTER USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY 'password'; 
+```
 
 ### SQLSTATE[42000]: Syntax error or access violation: 1231 Variable `'sql_mode'` can't be set to the value of `'NO_AUTO_CREATE_USER'`
 ```bash
