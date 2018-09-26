@@ -1,6 +1,6 @@
 title: Linux下phpStorm等等jetbrains编辑器无法使用搜狗输入法输入中文
-date: 2018年08月08日 08:08:08
-update: 2018年08月08日 08:08:08
+date: 2017-06-06 01:02:03
+update: 2017-06-06 01:02:03
 author: admin
 
 tags: 

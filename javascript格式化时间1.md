@@ -1,7 +1,7 @@
 title: javascript格式化时间（几秒钟前，几分钟前，几小时前，几天前...）
-date: 2018年08月08日 08:08:08
-update: 2018年08月08日 08:08:08
-author: 1
+date: 2017-06-06 01:02:03
+update: 2017-06-06 01:02:03
+author: admin
 
 tags: 
     - javascript
