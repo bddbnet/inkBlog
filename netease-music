@@ -1,0 +1,6 @@
+@Phishion debian testing 安装的 1.1.0 版，google 了好多篇都没完全解决打开没有界面的问题，今天又兴起搜了搜，按贴吧里一个不起眼的帖改了一行内容居然解决这个问题了：
+
+/usr/share/applications/netease-cloud-music.desktop
+Terminal=false 这一行移到 EXec=netease-cloud-music %U 这一行上面
+
+如果没解决，rm -rf ~/.cache/netease-cloud-music/*

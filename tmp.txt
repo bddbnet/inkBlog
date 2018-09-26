@@ -1,0 +1,56 @@
+```
+https://bddb.net {
+    root /www/lianchuang_wxapp/public
+    fastcgi / /run/php/php7.2-fpm.sock php {
+        index index.php
+    }
+
+    # To handle .html extensions with laravel change ext to
+    # ext / .html
+
+    rewrite {
+        to {path} {path}/ /index.php?{query}
+    }
+    gzip
+    browse
+    log /var/log/caddy/access.log
+    errors /var/log/caddy/error.log
+
+
+    # Create a Webhook in git.
+    #git {
+        #repo https://github.com/xxx/xxx
+    #    path /home/xxx
+    #    #interval 60
+    #    hook  webhook laradock
+    #    hook_type   generic
+    #}
+
+    tls {
+        dns dnspod
+        }
+#    tls email xiyou9981@outlook.com
+}
+
+```
+
+CloudFlare credentials missing
+```
+; Letsencrypt-issued certificates will be written to this directory.
+Environment=CADDYPATH=/etc/ssl/caddy
+Environment=DNSPOD_API_KEY=62580,8b9bf922fc1e52c08766ccccc181a419
+
+```
+
+Caddy “listen tcp :443: bind: permission denied”
+```
+setcap CAP_NET_BIND_SERVICE=+eip /path/to/caddy
+```
+
+https://caddyserver.com/download
+
+https://caddyserver.com/download/linux/amd64?plugins=http.cors,http.ipfilter,http.realip,tls.dns.dnspod&license=personal&telemetry=off
+
+https://caddyserver.com/docs/automatic-https#dns-challenge
+
+https://caddyserver.com/docs/tls
