@@ -18,17 +18,17 @@ preview: 使用artisan时候遇到`caching_sha2_password`和`NO_AUTO_CREATE_USER
 
 In Connection.php line 664:
                                                                                                          
-  SQLSTATE[HY000] [2054] The server requested authentication method unknown to the client (SQL: create table `migrations` (`id` int unsigned not null auto_increment primary key  
-  , `migration` varchar(255) not null, `batch` int not null) default character set utf8mb4 collate utf8mb4_unicode_ci)                                                            
+  SQLSTATE[HY000] [2054] The server requested authentication method unknown to the client (SQL: create table `migrations` (`id` int unsigned not null auto_increment primary key 
+  , `migration` varchar(255) not null, `batch` int not null) default character set utf8mb4 collate utf8mb4_unicode_ci)
                             
 
 In Connector.php line 67:
                                                                                            
-  SQLSTATE[HY000] [2054] The server requested authentication method unknown to the client  
+  SQLSTATE[HY000] [2054] The server requested authentication method unknown to the client 
     
 In Connector.php line 67:
                                                                                                          
-  PDO::__construct(): The server requested authentication method unknown to the client [caching_sha2_password]  
+  PDO::__construct(): The server requested authentication method unknown to the client [caching_sha2_password] 
  
 ```
 > 出错原因：mysql8中已经将默认的密码认证方式改为了`caching_sha2_password`
@@ -45,13 +45,13 @@ ALTER USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
 
 In Connection.php line 664:
                                                                                  
-  SQLSTATE[42000]: Syntax error or access violation: 1231 Variable 'sql_mode' can't be set to the value of 'NO_AUTO_CREATE_USER' (SQL: create table `migrations` (`id` int unsig  
-  ned not null auto_increment primary key, `migration` varchar(255) not null, `batch` int not null) default character set utf8mb4 collate utf8mb4_unicode_ci)                     
+  SQLSTATE[42000]: Syntax error or access violation: 1231 Variable 'sql_mode' can't be set to the value of 'NO_AUTO_CREATE_USER' (SQL: create table `migrations` (`id` int unsig 
+  ned not null auto_increment primary key, `migration` varchar(255) not null, `batch` int not null) default character set utf8mb4 collate utf8mb4_unicode_ci)
                                    
 
 In MySqlConnector.php line 150:
                                                                                  
-  SQLSTATE[42000]: Syntax error or access violation: 1231 Variable 'sql_mode' can't be set to the value of 'NO_AUTO_CREATE_USER'  
+  SQLSTATE[42000]: Syntax error or access violation: 1231 Variable 'sql_mode' can't be set to the value of 'NO_AUTO_CREATE_USER' 
    
 ```
 > 出错原因：[Changes in MySQL 8.0.11 (2018-04-19, General Availability)](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-11.html)
